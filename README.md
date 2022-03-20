@@ -71,7 +71,8 @@ Now you can run "npm start" in the terminal and the application should work.
 
 ## Issues with the project
 
-* Stock market data is not real when using deployed link. Hence, you will never get updated profit/loss data of purchased stocks. I explained the reason already. I       found the national stock exchange(NSE) APIs from this [library](https://www.npmjs.com/package/indian-stock-exchange).
+* Stock market data is not real when using deployed link. Hence, you will never get updated profit/loss data of purchased stocks. I explained the reason already. I       found the national stock exchange(NSE) APIs from this [library](https://www.npmjs.com/package/indian-stock-exchange). 
+    -Help me out if there is a way to deploy the nodejs application with the real nsecontroller instead of that dummycontroller.
 * There is no validation on adding funds to the account. Update the fake bank details and that's it. 
 * There is no admin or customer-service api to read and resolve issued raised by tickets for the users. So ticket status will remain pending.
 
