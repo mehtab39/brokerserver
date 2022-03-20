@@ -60,12 +60,12 @@ Now you can run "npm start" in the terminal and the application should work.
 ## Added Functionalities
 
 
-* API for creating, updating and login an account using validatorjs for validating the form and bcryptjs for hashing the password.
-* API for searching any national stock exchange(NSE) equity, buying, selling, and add/remove it to/from watchlist.
-* API to add/withdraw money from their account and sending a trasanction file in .csv format using json2csv.
-* API for fetching user's orders (buy/sell/failed).
-* API for sending stocks as a gift to someone using their email id (registed with the application.) Gifted stocks will be sent to recipient's account.
-* API for creating tickets for the users facing trouble. 
+* [API](https://brouseserver.herokuapp.com/user) for creating, updating and login an account using validatorjs for validating the form and bcryptjs for hashing the password.
+* [API](https://brouseserver.herokuapp.com/nse) for searching any national stock exchange(NSE) equity, buying, selling, and add/remove it to/from watchlist.
+* [API](https://brouseserver.herokuapp.com/user) to add/withdraw money from their account and sending a trasanction file in .csv format using json2csv.
+* [API](https://brouseserver.herokuapp.com/order) for fetching user's orders (buy/sell/failed).
+* [API](https://brouseserver.herokuapp.com/gift) for sending stocks as a gift to someone using their email id (registed with the application.) Gifted stocks will be sent to recipient's account.
+* [API](https://brouseserver.herokuapp.com/ticket) for creating tickets for the users facing trouble. 
 
 
 
