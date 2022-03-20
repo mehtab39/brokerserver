@@ -13,7 +13,7 @@ async function sufficientMoneyForOrder(req, res, next) {
     const value = +price * +quantity
     if(value <= 0 || value == NaN || quantity<= 0 || instrument == undefined) {
         return res.status(300).send({
-            e: "failed",
+            status: "failed",
             message: "Invalid order"
         })
     }
@@ -35,7 +35,7 @@ async function sufficientMoneyForOrder(req, res, next) {
             }
         await Order.create(payload);
         return res.status(300).send({
-            e: "failed",
+            status: "failed",
             message: "Insufficient Money"
         })
 
@@ -71,7 +71,7 @@ async function holdingsValidation(req, res, next) {
             }
             await Order.create(payload);
             return res.status(300).send({
-                e: "failed",
+                status: "failed",
                 message: "Invalid order"
             })
         }
@@ -102,7 +102,7 @@ async function holdingsValidation(req, res, next) {
         }
         await Order.create(payload);
         return res.status(300).send({
-            e: "failed",
+            status: "failed",
             message: "You have less or no holdings"
         })
     }

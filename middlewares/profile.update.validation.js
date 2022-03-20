@@ -12,14 +12,14 @@ const profileUpdateValidation = (req, res, next) => {
         if (validation.fails()) {
             return res.status(412)
                 .send({
-                    status: "error",
+                    status: "failed",
                     message: 'Validation failed'
                 });
         }
        else  next()
     } catch (e) {
         res.status(500).send({
-            status: "error",
+            status: "failed",
             message: e
         })
 

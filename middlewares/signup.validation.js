@@ -25,7 +25,7 @@ const signupValidation = (req, res, next) => {
         if (validation.fails()) {
             return res.status(412)
                 .send({
-                    status: "error",
+                    status: "failed",
                     message: 'Validation failed'
                 });
         }
@@ -36,7 +36,7 @@ const signupValidation = (req, res, next) => {
         next()
     } catch (e) {
         res.status(500).send({
-            status: "error",
+            status: "failed",
             message: e
         })
 

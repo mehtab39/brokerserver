@@ -22,15 +22,7 @@ router.get("/get_market_status", (req, res, next) => {
       });
   });
   
-  // Get the quotes of all indexes in NSE - HTML
-  // Example: http://localhost:2550/nse/get_quotes
-  router.get("/get_quotes", (req, res, next) => {
-    NSEAPI.getQuotes()
-      .then(function (response) {
-        res.json(response.data);
-      });
-  });
-  
+
   // Get the quotation data of the symbol (companyName) from NSE - JSON
   // Example: http://localhost:2550/nse/get_quote_info?companyName=TCS
   router.get("/get_quote_info", (req, res, next) => {
@@ -123,29 +115,49 @@ router.get("/get_market_status", (req, res, next) => {
   // Get 52 weeks all low stocks in NSE - JSON
   // Example: http://localhost:2550/nse/get_52_week_low
   router.get("/get_52_week_low", (req, res, next) => {
+    try{
     NSEAPI.get52WeekLow()
       .then(function (response) {
         res.json(response.data);
       });
+    }
+    catch(err) {
+      console.log('err:', err)
+
+    }
+      
   });
   
   // Get the NSE stocks whose values are highest - JSON
   // Example: http://localhost:2550/nse/get_top_value_stocks
   router.get("/get_top_value_stocks", (req, res, next) => {
-    NSEAPI.getTopValueStocks()
+    try{
+      NSEAPI.getTopValueStocks()
       .then(function (response) {
         res.json(response.data);
       });
+    }
+  
+      catch (e) {
+        console.log('e:', e)
+      }
   });
   
   // Get the NSE stocks whose volumes sold are highest - JSON
   // Example: http://localhost:2550/nse/get_top_volume_stocks
   router.get("/get_top_volume_stocks", (req, res, next) => {
-    NSEAPI.getTopVolumeStocks()
+    try{
+      NSEAPI.getTopVolumeStocks()
       .then(function (response) {
         res.json(response.data);
       });
-  });
+    }
+    catch (e) {
+      console.log('e:', e)
+    }
+  })
+    
+   
   
 
 module.exports = router;

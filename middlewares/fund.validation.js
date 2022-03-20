@@ -3,7 +3,7 @@ const validateAmount = (req, res, next) => {
     let value = +req.body.value;
     if (typeof value == "number" && value < 5000000 && value > 0) next();
     else return res.status(300).send({
-        e: "failed",
+        status: "failed",
         message: "Invalid amount"
     })
 }
@@ -12,12 +12,12 @@ async function validateBank(req, res, next) {
     try{
         const user = await User.findOne({clientId: clientId});
         if(user.bankdetails) return next();
-        return res.status(405).send({e: "failed",
+        return res.status(405).send({status: "failed",
         message:"Please update bank details"}) 
 
     }
     catch(err){
-        return res.status(405).send({e: "failed",
+        return res.status(405).send({status: "failed",
         message:"User invalid"})   
     }    
 }
@@ -28,11 +28,11 @@ async function sufficientMoney(req, res, next) {
     try{
         const user = await User.findOne({clientId: clientId});
         if(user.funds-value>=0) next();
-        else return res.status(300).send({e: "failed",
+        else return res.status(300).send({status: "failed",
                        message:"Insufficient Money"})
     }
     catch(err){
-        return res.status(405).send({e: "failed",
+        return res.status(405).send({status: "failed",
         message:"User invalid"})   
     }    
 }

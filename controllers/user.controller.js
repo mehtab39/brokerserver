@@ -38,7 +38,6 @@ const newToken = (user) => {
 // }
 
 router.post('/createaccount', signupValidation, async function (req, res) {
-    console.log('req:', req.body)
     let user;
     try {
         user = await User.findOne({
