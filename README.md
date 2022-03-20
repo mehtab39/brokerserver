@@ -14,7 +14,9 @@ Believe me, there is nothing else to understand to understand the features of th
 ## Demo
 
 The application is deployed to Vercel and can be accessed through the following link:
-[Brouse](https://brouse-broker.vercel.app)
+
+[Client](https://brouse-broker.vercel.app)
+
 [Server](https://brouseserver.herokuapp.com)
 
 #### Important:
