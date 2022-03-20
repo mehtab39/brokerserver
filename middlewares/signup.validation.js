@@ -21,6 +21,13 @@ const signupRule = {
 const signupValidation = (req, res, next) => {
     try {
         const data = req.body;
+        if(req.body.yearBorn > (new Date).getFullYear() - 18 ){
+            return res.status(412)
+            .send({
+                status: "failed",
+                message: 'Minimum age required is 18'
+            });
+        }
         let validation = new Validator(data, signupRule);
         if (validation.fails()) {
             return res.status(412)

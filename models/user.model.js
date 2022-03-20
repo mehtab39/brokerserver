@@ -36,7 +36,7 @@ const userSchema = Schema({
   }],
   yearBorn: {
     type: Number,
-    min: -1930,
+    min: 1930,
     max: (new Date).getFullYear() - 18,
     required: true
   },
