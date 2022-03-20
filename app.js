@@ -12,7 +12,9 @@ app.use(express.json());
 app.use("/order", ordercontroller);
 app.use("/user", usercontroller);
 app.use("/gift", giftcontroller);
-app.use("/nse", process.env.NODE_ENV ? nsecontroller : dummycontroller )
+
+//node_env is defined in heroku
+app.use("/nse", process.env.NODE_ENV ?  dummycontroller : nsecontroller)
 app.use("/ticket", ticketcontroller);
 // error handler
 app.use(function (err, req, res, next) {
